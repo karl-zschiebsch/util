@@ -1,0 +1,14 @@
+# test folder
+src/test
+
+# generated classes
+target
+*.class
+
+# Eclipse
+.settings/*
+*.classpath
+*.project
+
+# VS Code
+.vscode/*
