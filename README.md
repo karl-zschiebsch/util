@@ -3,10 +3,10 @@
 Util contains useful classes for server-side game projects.
 
 ## content
-1. [Beans](#beans)
-2. [Vollection](#beans)
-3. [Entity](#beans)
-4. [Value](#beans)
+- [beans](#beans)
+- [collection](#collection)
+- [entity](#entity)
+- [value](#value)
 
 ### beans
 Contains the core interface `Observable`. You can add listeners to each observable. When the value of an observable changes, a handler calls all listeners.

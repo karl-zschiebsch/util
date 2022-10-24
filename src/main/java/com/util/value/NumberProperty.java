@@ -2,10 +2,19 @@ package com.util.value;
 
 import com.util.beans.InvalidationListener;
 
-public class ObservableNumberProperty<T extends Number> implements ObservableNumberValue<T> {
+public class NumberProperty<T extends Number> extends Property implements ObservableNumberValue<T> {
     private final ValueChangeHelper<T> helper = new ValueChangeHelper<>();
 
     protected T value;
+
+    public NumberProperty(String name, Object bean, T value) {
+        super(name, bean);
+        this.value = value;
+    }
+
+    public NumberProperty(String name, Object bean) {
+        super(name, bean);
+    }
 
     private class Change implements ValueChangeListener.Change<T> {
         private final T old;
@@ -28,7 +37,7 @@ public class ObservableNumberProperty<T extends Number> implements ObservableNum
 
         @Override
         public ObservableValue<T> getValue() {
-            return ObservableNumberProperty.this;
+            return NumberProperty.this;
         }
 
     }
