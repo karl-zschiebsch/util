@@ -16,7 +16,6 @@ public class ObservableMapWrapper<K, V> implements ObservableMap<K, V> {
 	}
 
 	private class Change implements MapChangeListener.Change<K, V> {
-
 		private final K key;
 		private final V old;
 		private final V added;
@@ -58,26 +57,9 @@ public class ObservableMapWrapper<K, V> implements ObservableMap<K, V> {
 		}
 
 		@Override
-		public String toString() {
-			StringBuilder builder = new StringBuilder();
-			if (wasAdded) {
-				if (wasRemoved) {
-					builder.append(old).append(" replaced by ").append(added);
-				} else {
-					builder.append(added).append(" added");
-				}
-			} else {
-				builder.append(old).append(" removed");
-			}
-			builder.append(" at key ").append(key);
-			return builder.toString();
-		}
-
-		@Override
 		public ObservableMap<K, V> getMap() {
 			return ObservableMapWrapper.this;
 		}
-
 	}
 
 	@Override
