@@ -4,6 +4,7 @@ src/test
 # generated classes
 target
 *.class
+*.jar
 
 # Eclipse
 .settings/*
